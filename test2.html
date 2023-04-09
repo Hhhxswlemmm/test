@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>问卷调查</title>
+    <style>
+      /* CSS样式 */
+      body {
+        font-family: Arial, sans-serif; /* 设置字体 */
+        background-color: #f2f2f2; /* 设置背景颜色 */
+      }
+
+      form {
+        margin: 20px auto; /* 设置表单居中 */
+        max-width: 600px; /* 设置表单最大宽度 */
+        background-color: #fff; /* 设置表单背景颜色 */
+        padding: 20px; /* 设置表单内边距 */
+        border-radius: 5px; /* 设置表单圆角 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置表单阴影 */
+      }
+
+      label {
+        display: block; /* 设置标签为块级元素 */
+        margin-bottom: 10px; /* 设置标签下方空白 */
+        font-weight: bold; /* 设置标签加粗 */
+      }
+
+      input[type=text], select {
+        width: 100%; /* 设置输入框宽度为100% */
+        padding: 12px; /* 设置输入框内边距 */
+        margin-bottom: 20px; /* 设置输入框下方空白 */
+        border: none; /* 去除输入框边框 */
+        border-radius: 3px; /* 设置输入框圆角 */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 设置输入框阴影 */
+      }
+
+      input[type=submit] {
+        background-color: #4CAF50; /* 设置提交按钮背景颜色 */
+        color: #fff; /* 设置提交按钮文字颜色 */
+        padding: 12px 20px; /* 设置提交按钮内边距 */
+        border: none; /* 去除提交按钮边框 */
+        border-radius: 3px; /* 设置提交按钮圆角 */
+        cursor: pointer; /* 鼠标移上去变成手型 */
+        transition: background-color 0.2s ease; /* 设置过渡效果，使背景颜色改变时有动画 */
+      }
+
+      input[type=submit]:hover {
+        background-color: #3e8e41; /* 设置鼠标悬停时的背景颜色 */
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm" onsubmit="return false;">
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">年龄：</label>
+      <input type="text" id="age" name="age" required>
+
+      <label for="gender">性别：</label>
+      <select id="gender" name="gender" required>
+        <option value="">请选择</option>
+        <option value="male">男</option>
+        <option value="female">女</option>
+      </select>
+
+      <input type="submit" value="提交" onclick="submitForm()">
+    </form>
+
+    <script>
+      // JavaScript代码
+      function submitForm() {
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var gender = document.getElementById("gender").value;
+
+        var output = "您填写的信息如下：\n\n";
+        output += "姓名：" + name + "\n";
+        output += "年龄：" + age + "\n";
+        output += "性别：" + gender + "\n";
+
+        alert(output);
+      }
+    </script>
+  </body>
+</html>
